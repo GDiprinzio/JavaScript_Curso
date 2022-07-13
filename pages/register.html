@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../assets/css/style.css" />
+    <title>Portal de Usuarios - Registro</title>
+  </head>
+  <body>
+    <header class="header" id="headerIndex">
+      <nav class="navBar">
+        <h2 class="navTitle title">Sistema de Login y registro de usuarios</h2>
+        <li class="liNav"><a href="./../index.html">Volver al incio</a></li>
+      </nav>
+    </header>
+    <main>
+      <div class="contianerFormRegister">
+        <div class="formRegister">
+          <div class="titleRegister">
+            <h5>Por favor ingrese los datos para registrarse.</h5>
+          </div>
+          <form action="#" class="formUserRegister" id="formRegister">
+            <div class="formItem itemUserName" id="item__userNameR">
+              <label for="userName" class=" formLabel userName" id="fromLabel">Nombre:</label>
+              <input
+                type="text"
+                class="formInput imputUserLastName"
+                name="nombre"
+                id="userNameR"
+                required
+              />
+              <p class="inputAlertaError_userNameR">Se han ingresado caracteres no validos</p>
+            </div>
+            <div class="formItem itemUserLastName" id="item__userLastNameR">
+              <label for="userLastName" class=" formLabel userLastName">Apellido:</label>
+              <input
+                type="text"
+                class="formInput imputUserLastName"
+                name="apellido"
+                id="userLastNameR"
+                required
+              />
+              <p class="inputAlertaError_userLastNameR">Se han ingresado caracteres no validos</p>
+            </div>
+            <div class="formItem itemEmail" id="item__userEmailR">
+              <label for="inputEmail" class=" formLabel userEmail">E-mail:</label>
+              <input
+                type="email"
+                class="formInput inputEmail"
+                name="email"
+                id="userEmailR"
+                required
+              />
+              <p class="inputAlertaError_userEmailR">Formato e-mail incorrecto.</p>
+              <p class="inputAlertaError2_userEmailR">El e-mail ingresado ya se encuentra registrado.</p>
+            </div>
+            <div class="formItem itemPassword password1" id="item__password1">
+              <label for="inputPasswprd" class=" formLabel userPassword"
+                >Por favor ingrese un password de 4 a 12 caracteres:</label
+              >
+              <input
+                type="password"
+                class="formInput inputPassword"
+                name="password1"
+                id="password1"
+                required
+              />
+            </div>
+            <div class="formItem itemPassword password2" id="item__password2">
+              <label for="inputPasswprd" class=" formLabel userPassword"
+                >Por favor ingrese nuevamente el password:</label
+              >
+              <input
+                type="password"
+                class="formInput inputPassword"
+                name="password2"
+                id="password2"
+                required
+              />
+              <p class="inputAlertaError_password2">Los password no coinciden.</p>
+            </div>
+          </form>
+        </div>
+        <div class="containerButtons">
+          <button class="btn" type="submit">Registrarse</button>
+          <button class="btn" type="reset">reset</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p class="text">Todos los derechos reservados.</p>
+    </footer>
+    <script src="./../assets/js/index.js"></script>
+  </body>
+</html>
