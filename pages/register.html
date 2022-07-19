@@ -57,7 +57,7 @@
             </div>
             <div class="formItem itemPassword password1" id="item__password1">
               <label for="inputPasswprd" class=" formLabel userPassword"
-                >Por favor ingrese un password de 4 a 12 caracteres:</label
+                >Por favor ingrese un password:</label
               >
               <input
                 type="password"
@@ -66,6 +66,7 @@
                 id="password1"
                 required
               />
+              <p class="inputAlertaError_password1">La contraseña tiene que ser de 4 a 12 dígitos.</p>
             </div>
             <div class="formItem itemPassword password2" id="item__password2">
               <label for="inputPasswprd" class=" formLabel userPassword"
@@ -80,12 +81,13 @@
               />
               <p class="inputAlertaError_password2">Los password no coinciden.</p>
             </div>
+            <div class="containerButtons" id="containerButtons">
+              <button class="btn" id="registrar" type="submit">Registrarse</button>
+              <button class="btn" id="reset" type="reset">reset</button>
+            </div>
           </form>
         </div>
-        <div class="containerButtons">
-          <button class="btn" type="submit">Registrarse</button>
-          <button class="btn" type="reset">reset</button>
-        </div>
+        
       </div>
     </main>
     <footer class="footer">
