@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../assets/css/style.css" />
     <title>Portal de Usuarios - Login</title>
-</head>
-<body>
-<header class="header" id="headerIndex">
-<nav class="navBar">
-    <h2 class="navTitle title">Sistema de Login y registro de usuarios</h2>
-    <li class="liNav"><a href="./../index.html">Volver al incio</a></li>
-</nav>
-</header>
-<main>
-<div class="contianerForm">
-    <form action="" class="containerFormLogin" id="formLogin">
-        <div class="containerUserNameL" id="userLogin">
+  </head>
+  <body>
+    <header class="header" id="headerIndex">
+      <nav class="navBar">
+        <h2 class="navTitle title">Sistema de Login y registro de usuarios</h2>
+        <li class="liNav"><a href="./../index.html">Volver al incio</a></li>
+      </nav>
+    </header>
+    <main>
+      <div class="contianerForm">
+        <form action="" class="containerFormLogin" id="formLogin">
+          <div class="containerUserNameL" id="userLogin">
             <label for="labelUserLogin">Usuario/E-mail:</label>
-            <input type="email" class="inputUserLogin" name="userNameLogin" id="userNameLogin" required>
-            <p class="inputAlertaError_userEmailR">Formato e-mail incorrecto.</p>
-        </div>
-        <div class="containerUserPasswordL" id="passwordLogin">
+            <input
+              type="email"
+              class="inputUserLogin"
+              name="userNameLogin"
+              id="userNameLogin"
+              required
+            />
+            <p class="inputAlertaError_userNameLogin">
+              Formato e-mail incorrecto.
+            </p>
+          </div>
+          <div class="containerUserPasswordL" id="passwordLogin">
             <label for="labelUserPassword">Ingrese su password:</label>
-            <input type="password" class="inputUsePassword" name="userPasswordL" id="userPasswordL" required>
-            <p class="inputAlertaError_password1">La contraseña tiene que ser de 4 a 12 dígitos.</p>
-        </div>  
-        <div class="containerButtons">
+            <input
+              type="password"
+              class="inputUsePassword"
+              name="userPasswordL"
+              id="userPasswordL"
+              required
+            />
+            <p class="inputAlertaError_userPasswordL">
+              La contraseña tiene que ser de 4 a 12 dígitos.
+            </p>
+            <p class="inputAlertaError_Login">
+                El usuario o la contraseña son incorrectos.
+              </p>
+          </div>
+          <div class="containerButtons">
             <button class="btn" type="submit">Iniciar sesión</button>
-            <button class="btn" type="reset"> reset</button>
-        </div> 
-    </form>
-    
-</div>
-</main>
-<footer class="footer">
-<p class="text">Todos los derechos reservados.</p>
-</footer>
-<script src="./../assets/js/variables.js"></script>
-  <script src="./../assets/js/index.js"></script>  
-</body>
+            <button class="btn" type="reset">reset</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="footer">
+      <p class="text">Todos los derechos reservados.</p>
+    </footer>
+    <script src="./../assets/js/variables.js"></script>
+    <script src="./../assets/js/funtions.js"></script>
+    <script src="./../assets/js/login.js"></script>
+  </body>
 </html>

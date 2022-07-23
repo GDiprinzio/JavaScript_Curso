@@ -206,7 +206,11 @@ input {
 .inputAlertaError_userLastNameR,
 .inputAlertaError_userEmailR,
 .inputAlertaError_password2,
-.inputAlertaError2_userEmailR {
+.inputAlertaError2_userEmailR, 
+.inputAlertaError_userNameLogin, 
+.inputAlertaError_userPasswordL,
+.inputAlertaError_Login
+ {
   font-size: 12px;
   margin-bottom: 0;
   display: none;

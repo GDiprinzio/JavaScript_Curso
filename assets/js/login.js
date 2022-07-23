@@ -1,45 +1,36 @@
 //-------------- LOGIN DE USUARIOS --------------//
-const formLogin= document.getElementById("formLogin");
-const inputsL= document.querySelectorAll("#formLogin, input");
+const formLogin = document.getElementById("formLogin");
+const inputsL = document.querySelectorAll("#formLogin, input");
 
-const validationLogin= (e)=>{
-switch (e.target.name) {
-  case "userNameLogin":
-    //validationL(e.target.name, e.target.value, expressions.correo);
-    if (value.match(expressions.correo)) {
-      console.log("VALIDO");
+const validationLogin = (e) => {
+  switch (e.target.name) {
+    case "userNameLogin":
+      validation(e.target.name, e.target.value, expressions.correo);
+      break;
 
-    }
-
-    break;
-    
-  case "userPasswordL":
-//    validationL(e.target.name, e.target.value, expressions.password);
-break;
+    case "userPasswordL":
+      validation(e.target.name, e.target.value, expressions.password);
+      break;
+  }
 };
-};
-
-const validationL = (campo, value, expretion) => {
-  if (value.match(expretion)) {
-    document.getElementById(`${campo}`).classList.remove("formValIncorrecto");
-    document.getElementById(`${campo}`).classList.add("formValCorrecto");
-    document
-      .querySelector(`${campo}, .inputAlertaError_${campo}`)
-      .classList.remove(`inputAlertaErrorActive`);
-    } else {
-      document.getElementById(`password2`).classList.remove("formValIncorrecto");
-      document.getElementById(`password2`).classList.add("formValCorrecto");
-      document
-        .querySelector(`password2, .inputAlertaError_password2`)
-        .classList.remove(`inputAlertaErrorActive`);
-    };
-  };
 
 inputsL.forEach((input) => {
-  inputL.addEventListener("keyup", validationLogin);
-  inputL.addEventListener("blur", validationLogin);
+  input.addEventListener("keyup", validationLogin);
+  input.addEventListener("blur", validationLogin);
 });
 
-formLogin.addEventListener("submit", (e=> {
+formLogin.addEventListener("submit", (e) => {
   e.preventDefault();
-}));
+  const usersListStorage = JSON.parse(localStorage.getItem("users"));
+  console.log(usersListStorage);
+  console.log(e.target.userNameLogin.value);
+  console.log(e.target.userPasswordL.value);
+  if( usersListStorage.find((Element)=> Element.userEmail === e.target.userNameLogin.value && Element.userPassword === e.target.userPasswordL.value)){
+  console.log("PASO");
+  document.querySelector(`userPasswordL, .inputAlertaError_Login`)
+  .classList.remove(`inputAlertaErrorActive2`);
+  }else{
+    document.querySelector(`userPasswordL, .inputAlertaError_Login`)
+    .classList.add(`inputAlertaErrorActive2`);
+  }
+});
