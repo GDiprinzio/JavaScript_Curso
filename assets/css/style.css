@@ -23,28 +23,37 @@ body {
 header {
   background-color: #112d4e;
   display: flex;
-  justify-content: center;
+ justify-content: center;
   align-items: center;
-  height: 5rem;
+  height: 6rem;
   position: fixed;
   width: 100%;
   position: fixed;
   top: 0;
 }
-header nav .liNav {
-  list-style: none;
+
+.navBarItem {
+color: white;
+width: 100%;
+display: flex;
+justify-content: center;
+margin: 0 1rem;
+line-height: 1rem;
+text-transform: uppercase;
+width: max-content; 
 }
-header nav .liNav a {
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.8rem 1.2rem;
-  border-radius: 6rem;
-  transition: 250ms ease-in-out;
+
+.navItem{
+  padding: 1rem;
   list-style: none;
 }
 
+.navItem_link{
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  text-decoration: none;
+  padding: .8rem 1.2rem;
+}
 footer {
   position: fixed;
   width: 100%;
@@ -174,7 +183,6 @@ main {
 }
 input {
   height: 2rem;
-
 }
 .userL,
 .passwordL,
@@ -185,7 +193,6 @@ input {
 .password2 {
   display: flex;
   flex-direction: column;
-  
 }
 
 .formValCorrecto {
@@ -195,7 +202,11 @@ input {
   color: rgb(149, 17, 17);
 }
 
-.inputAlertaError_userNameR, .inputAlertaError_userLastNameR, .inputAlertaError_userEmailR, .inputAlertaError_password2, .inputAlertaError2_userEmailR {
+.inputAlertaError_userNameR,
+.inputAlertaError_userLastNameR,
+.inputAlertaError_userEmailR,
+.inputAlertaError_password2,
+.inputAlertaError2_userEmailR {
   font-size: 12px;
   margin-bottom: 0;
   display: none;

@@ -16,25 +16,29 @@
 </header>
 <main>
 <div class="contianerForm">
-    <form action="" class="containerFormLogin" id="containerFormLogin">
+    <form action="" class="containerFormLogin" id="formLogin">
         <div class="containerUserNameL" id="userLogin">
             <label for="labelUserLogin">Usuario/E-mail:</label>
-            <input type="email" class="inputUserLogin" name="userNameL" id="userNameLogin" required>
+            <input type="email" class="inputUserLogin" name="userNameLogin" id="userNameLogin" required>
+            <p class="inputAlertaError_userEmailR">Formato e-mail incorrecto.</p>
         </div>
         <div class="containerUserPasswordL" id="passwordLogin">
             <label for="labelUserPassword">Ingrese su password:</label>
-            <input type="password" class="inputUsePassword" name="userPasswordL" id="userPasswordLogin" required>
-        </div>   
+            <input type="password" class="inputUsePassword" name="userPasswordL" id="userPasswordL" required>
+            <p class="inputAlertaError_password1">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+        </div>  
+        <div class="containerButtons">
+            <button class="btn" type="submit">Iniciar sesión</button>
+            <button class="btn" type="reset"> reset</button>
+        </div> 
     </form>
-    <div class="containerButtons">
-        <button class="btn" type="submit">Iniciar sesión</button>
-        <button class="btn" type="reset"> reset</button>
-    </div>
+    
 </div>
 </main>
 <footer class="footer">
 <p class="text">Todos los derechos reservados.</p>
 </footer>
+<script src="./../assets/js/variables.js"></script>
   <script src="./../assets/js/index.js"></script>  
 </body>
 </html>

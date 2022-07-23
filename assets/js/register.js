@@ -1,13 +1,7 @@
 const formReg = document.getElementById("formRegister");
 const inputs = document.querySelectorAll("#formRegister, input");
-//const register= document.getElementById("registrar");
 
-const expressions = {
-  nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-  password: /^.{4,12}$/, // 4 a 12 digitos.
-  correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-};
-
+//Constantes y ARRAYS
 const fields = {
   userNameR: false,
   userLastNameR: false,
@@ -15,67 +9,31 @@ const fields = {
   password: false,
 };
 
-const userList = [
-  {
-    userName: null,
-    userLastName: null,
-    userEmail: "admin@admin.com",
-    userPassword: "123456",
-    userType: "admin",
-  },
-  {
-    userName: "Gabriel",
-    userLastName: "Di Prinzio",
-    userEmail: "gdiprinzio@gmail.com",
-    userPassword: "1976",
-    userType: "admin",
-  },
-];
-
-const usersList = JSON.stringify(userList);
-localStorage.setItem("users", usersList);
-
-class UserInfomation {
-  constructor(userName, userLastName, userEmail, userPassword) {
-    this.userName = userName;
-    this.userLastName = userLastName;
-    this.userEmail = userEmail;
-    this.userPassword = userPassword;
-  }
-}
-
+//-------------- REGISTRO DE USUARIOS --------------//
+//Validación de los Inputs
 const formValidation = (e) => {
   switch (e.target.name) {
     case "userNameR":
-      validation("userNameR", e.target.value, expressions.nombre);
+      validation(e.target.name, e.target.value, expressions.nombre);
       break;
     case "userLastNameR":
-      validation("userLastNameR", e.target.value, expressions.nombre);
+      validation(e.target.name, e.target.value, expressions.nombre);
       break;
-    case "emailR":
-      validation("userEmailR", e.target.value, expressions.correo);
-      /* userList.forEach((Object) => {
-        if (Object.userEmail === e.target.value) {
-          document
-            .querySelector(`userEmailR, .inputAlertaError2_userEmailR`)
-            .classList.add(`inputAlertaErrorActive2`);
-        } else {
-          document
-            .querySelector(`userEmailR, .inputAlertaError2_userEmailR`)
-            .classList.remove(`inputAlertaErrorActive2`);
-        }
-      }); */
+    case "userEmailR":
+      validation(e.target.name, e.target.value, expressions.correo);
       break;
     case "password1":
-      validation("password1", e.target.value, expressions.password);
+      validation(e.target.name, e.target.value, expressions.password);
       validationPassword2();
       break;
     case "password2":
       validationPassword2();
       break;
+
   }
 };
 
+//Función de Validacion de inputs vs expresiones regulares
 const validation = (campo, value, expretion) => {
   if (value.match(expretion)) {
     document.getElementById(`${campo}`).classList.remove("formValIncorrecto");
@@ -119,19 +77,22 @@ inputs.forEach((input) => {
   input.addEventListener("blur", formValidation);
 });
 
+//Declaracion de Buttons
 formReg.addEventListener("submit", (e) => {
   e.preventDefault();
   const usersListStorage = JSON.parse(localStorage.getItem("users"));
-  console.log(e.target.emailR.value);
-   if(usersListStorage.find(Element => Element.userEmail === e.target.emailR.value)){
+  console.log(e.target.userEmailR.value);
+   if(usersListStorage.find(Element => Element.userEmail === e.target.userEmailR.value)){
     document.querySelector(`userEmailR, .inputAlertaError2_userEmailR`).classList.add(`inputAlertaErrorActive2`);
         } else {
           document.querySelector(`userEmailR, .inputAlertaError2_userEmailR`).classList.remove(`inputAlertaErrorActive2`);
 
-          const newUser= new UserInfomation(e.target.userNameR.value,e.target.userLastNameR.value,e.target.emailR.value,e.target.password1.value);
+          const newUser= new UserInfomation(e.target.userNameR.value,e.target.userLastNameR.value,e.target.userEmailR.value,e.target.password1.value);
           console.log(newUser);
           usersListStorage.push(newUser);
           const newUserStorage=JSON.stringify(usersListStorage);
           localStorage.setItem("users",newUserStorage);
-        };
+          const sessionUser=JSON.stringify(newUser);
+          sessionStorage.setItem("userSession");
+        };    
 });
