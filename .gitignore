@@ -43,3 +43,6 @@ node_modules/nodemailer/lib/stream-transport/index.js
 node_modules/nodemailer/lib/well-known/index.js
 node_modules/nodemailer/lib/well-known/services.json
 node_modules/nodemailer/lib/xoauth2/index.js
+node_modules/nodejs/1/singleobject.js
+node_modules/nodejs/1/getmodule.js
+node_modules/nodejs/1/module.js

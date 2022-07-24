@@ -1,4 +1,7 @@
+
+
 //Función de Validacion de inputs vs expresiones regulares
+
 const validation = (campo, value, expretion) => {
   if (value.match(expretion)) {
     document.getElementById(`${campo}`).classList.remove("formValIncorrecto");
@@ -39,3 +42,4 @@ const sessionUser = (user) => {
   const sessionLogin =JSON.stringify(user);
   sessionStorage.setItem("userSession", sessionLogin);
 };
+

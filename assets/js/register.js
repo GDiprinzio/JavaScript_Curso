@@ -58,5 +58,6 @@ formReg.addEventListener("submit", (e) => {
     const newUserStorage = JSON.stringify(usersListStorage);
     localStorage.setItem("users", newUserStorage);
     sessionUser(newUser); 
+  
   }
 });
