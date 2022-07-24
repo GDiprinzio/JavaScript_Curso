@@ -22,15 +22,23 @@ inputsL.forEach((input) => {
 formLogin.addEventListener("submit", (e) => {
   e.preventDefault();
   const usersListStorage = JSON.parse(localStorage.getItem("users"));
-  console.log(usersListStorage);
-  console.log(e.target.userNameLogin.value);
-  console.log(e.target.userPasswordL.value);
-  if( usersListStorage.find((Element)=> Element.userEmail === e.target.userNameLogin.value && Element.userPassword === e.target.userPasswordL.value)){
-  console.log("PASO");
-  document.querySelector(`userPasswordL, .inputAlertaError_Login`)
-  .classList.remove(`inputAlertaErrorActive2`);
+  const userValidation= usersListStorage.find((Element)=> Element.userEmail === e.target.userNameLogin.value && Element.userPassword === e.target.userPasswordL.value);
+  if( userValidation ? true : false){
+    const position= usersListStorage.findIndex(user=>user.userEmail ===e.target.userNameLogin.value);
+    console.log(position);
+    const userLogin = usersListStorage[position];
+    sessionUser(userLogin);
+  /* document.querySelector(`userPasswordL, .inputAlertaError_Login`)
+  .classList.remove(`inputAlertaErrorActive2`); */
+
   }else{
-    document.querySelector(`userPasswordL, .inputAlertaError_Login`)
-    .classList.add(`inputAlertaErrorActive2`);
+  /*   document.querySelector(`userPasswordL, .inputAlertaError_Login`)
+    .classList.add(`inputAlertaErrorActive2`); */
+  
+Swal.fire({
+  icon: 'error',
+  title: 'Error de Login',
+  text: 'Usuario o contraseña incorrecto!'
+})
   }
 });

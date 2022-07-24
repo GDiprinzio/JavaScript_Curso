@@ -1,13 +1,6 @@
 const formReg = document.getElementById("formRegister");
 const inputs = document.querySelectorAll("#formRegister, input");
 
-//Constantes y ARRAYS
-const fields = {
-  userNameR: false,
-  userLastNameR: false,
-  emailR: false,
-  password: false,
-};
 
 //-------------- REGISTRO DE USUARIOS --------------//
 //Validación de los Inputs
@@ -42,18 +35,18 @@ formReg.addEventListener("submit", (e) => {
   e.preventDefault();
   const usersListStorage = JSON.parse(localStorage.getItem("users"));
   console.log(e.target.userEmailR.value);
-  if (
-    usersListStorage.find(
-      (Element) => Element.userEmail === e.target.userEmailR.value
-    )
-  ) {
-    document
-      .querySelector(`userEmailR, .inputAlertaError2_userEmailR`)
-      .classList.add(`inputAlertaErrorActive2`);
+  const emailValidation=  usersListStorage.find(
+    (Element) => Element.userEmail === e.target.userEmailR.value
+  );
+  if (emailValidation ? true : false) {
+    
+      Swal.fire({
+        icon: 'error',
+        title: 'Error de E-mail',
+        text: 'El correo electrónico ya se encuentra registrado.'
+      })
   } else {
-    document
-      .querySelector(`userEmailR, .inputAlertaError2_userEmailR`)
-      .classList.remove(`inputAlertaErrorActive2`);
+    
 
     const newUser = new UserInfomation(
       e.target.userNameR.value,
@@ -61,11 +54,9 @@ formReg.addEventListener("submit", (e) => {
       e.target.userEmailR.value,
       e.target.password1.value
     );
-    console.log(newUser);
     usersListStorage.push(newUser);
     const newUserStorage = JSON.stringify(usersListStorage);
     localStorage.setItem("users", newUserStorage);
-    const sessionUser = JSON.stringify(newUser);
-    sessionStorage.setItem("userSession",sessionUser);
+    sessionUser(newUser); 
   }
 });
