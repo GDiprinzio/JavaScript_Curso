@@ -43,14 +43,3 @@ const sessionUser = (user) => {
   sessionStorage.setItem("userSession", sessionLogin);
 };
 
-//FUNCION DE ENVIO DE CORREO
-/* const sendEmail= (eMail, userName, userLastName)=>{
-const infoeMail = await transporter.sendMail({
-  from: '"Registro de Usuarios" <gdiprinzio@gmail.com>', // sender address
-  to: `${eMail}`, // list of receivers
-  subject: `Hola ${userName} ${userLastName}`, // Subject line
-  text: "Hello world?", // plain text body
-  html: "<b>Hello world?</b>", // html body
-});
-console.log('Mensaje enviado', infoeMail.messageId);
-}; */
