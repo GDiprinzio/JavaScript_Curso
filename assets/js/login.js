@@ -28,6 +28,7 @@ formLogin.addEventListener("submit", (e) => {
     console.log(position);
     const userLogin = usersListStorage[position];
     sessionUser(userLogin);
+    open('./../../pages/main.html',"Pagina de Usurio");
   /* document.querySelector(`userPasswordL, .inputAlertaError_Login`)
   .classList.remove(`inputAlertaErrorActive2`); */
 

@@ -1,7 +1,6 @@
 const formReg = document.getElementById("formRegister");
 const inputs = document.querySelectorAll("#formRegister, input");
 
-
 //-------------- REGISTRO DE USUARIOS --------------//
 //Validación de los Inputs
 const formValidation = (e) => {
@@ -35,29 +34,28 @@ formReg.addEventListener("submit", (e) => {
   e.preventDefault();
   const usersListStorage = JSON.parse(localStorage.getItem("users"));
   console.log(e.target.userEmailR.value);
-  const emailValidation=  usersListStorage.find(
+  const emailValidation = usersListStorage.find(
     (Element) => Element.userEmail === e.target.userEmailR.value
   );
   if (emailValidation ? true : false) {
-    
-      Swal.fire({
-        icon: 'error',
-        title: 'Error de E-mail',
-        text: 'El correo electrónico ya se encuentra registrado.'
-      })
+    Swal.fire({
+      icon: "error",
+      title: "Error de E-mail",
+      text: "El correo electrónico ya se encuentra registrado.",
+    });
   } else {
-    
-
     const newUser = new UserInfomation(
       e.target.userNameR.value,
       e.target.userLastNameR.value,
       e.target.userEmailR.value,
       e.target.password1.value
     );
+
+    const { userName, userLastName, userEmail } = newUser;
     usersListStorage.push(newUser);
     const newUserStorage = JSON.stringify(usersListStorage);
     localStorage.setItem("users", newUserStorage);
-    sessionUser(newUser); 
-  
+    sessionUser(newUser);
+    open('./../../pages/main.html',"Pagina de Usurio");
   }
 });

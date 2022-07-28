@@ -37,3 +37,16 @@ const expressions = {
       this.userAdmin=false;
     }
   };
+
+  //CONFIGURACION DEL SERVICIO DE CORREO
+  /* const nodemailer = require("nodemailer");
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, 
+    auth: {
+      user: 'gdiprinzio@gmail.com', 
+      pass: 'hodtveblhyhtpkqt', 
+    },
+  }); */
