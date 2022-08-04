@@ -1,0 +1,23 @@
+[
+    {
+      "userName": null,
+      "userLastName": null,
+      "userEmail": "admin@admin.com",
+      "userPassword": "123456",
+      "userAdmin": true
+    },
+    {
+      "userName": "Gabriel",
+      "userLastName": "Di Prinzio",
+      "userEmail": "gdiprinzio@gmail.com",
+      "userPassword": "1976",
+      "userAdmin": true
+    },
+    {
+      "userName": "Bruno",
+      "userLastName": "Tutor",
+      "userEmai": "brunotutor@gmail.com",
+      "userPassword": "1976",
+      "userAdmin": false
+    }
+  ]
