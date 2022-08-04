@@ -54,6 +54,11 @@ width: max-content;
   text-decoration: none;
   padding: .8rem 1.2rem;
 }
+
+.navItemAdminAct{
+  display: none;
+}
+
 footer {
   position: fixed;
   width: 100%;

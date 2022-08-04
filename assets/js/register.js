@@ -1,6 +1,7 @@
 const formReg = document.getElementById("formRegister");
 const inputs = document.querySelectorAll("#formRegister, input");
 
+
 //-------------- REGISTRO DE USUARIOS --------------//
 //Validación de los Inputs
 const formValidation = (e) => {
@@ -50,8 +51,6 @@ formReg.addEventListener("submit", (e) => {
       e.target.userEmailR.value,
       e.target.password1.value
     );
-
-    const { userName, userLastName, userEmail } = newUser;
     usersListStorage.push(newUser);
     const newUserStorage = JSON.stringify(usersListStorage);
     localStorage.setItem("users", newUserStorage);

@@ -21,6 +21,13 @@ const expressions = {
       userPassword: "1976",
       userAdmin: true
     },
+    {
+      userName: "Bruno",
+      userLastName: "Tutor",
+      userEmail: "brunotutor@gmail.com",
+      userPassword: "1976",
+      userAdmin: false
+    },
   ];
   
   //Transformación con JSON y subida al LocalStorage

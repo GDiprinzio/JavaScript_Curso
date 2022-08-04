@@ -27,14 +27,11 @@ formLogin.addEventListener("submit", (e) => {
     const position= usersListStorage.findIndex(user=>user.userEmail ===e.target.userNameLogin.value);
     console.log(position);
     const userLogin = usersListStorage[position];
-    sessionUser(userLogin);
+    sessionUser(userLogin); 
     open('./../../pages/main.html',"Pagina de Usurio");
-  /* document.querySelector(`userPasswordL, .inputAlertaError_Login`)
-  .classList.remove(`inputAlertaErrorActive2`); */
-
+    window.close();
+  
   }else{
-  /*   document.querySelector(`userPasswordL, .inputAlertaError_Login`)
-    .classList.add(`inputAlertaErrorActive2`); */
   
 Swal.fire({
   icon: 'error',
