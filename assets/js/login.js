@@ -25,12 +25,10 @@ formLogin.addEventListener("submit", (e) => {
   const userValidation= usersListStorage.find((Element)=> Element.userEmail === e.target.userNameLogin.value && Element.userPassword === e.target.userPasswordL.value);
   if( userValidation ? true : false){
     const position= usersListStorage.findIndex(user=>user.userEmail ===e.target.userNameLogin.value);
-    console.log(position);
     const userLogin = usersListStorage[position];
     sessionUser(userLogin); 
-    open('./../../pages/main.html',"Pagina de Usurio");
-    window.close();
-  
+    window.open('./../../pages/main.html',"_self");
+ 
   }else{
   
 Swal.fire({
